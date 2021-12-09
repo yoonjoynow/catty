@@ -1,0 +1,23 @@
+spring:
+  datasource:
+#    url: jdbc:h2:tcp://localhost:9092/~/mydata/h2/catty
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+
+  jpa:
+    database: h2
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+
+
+#logging:
+#  level:
+#    p6spy: debug
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
